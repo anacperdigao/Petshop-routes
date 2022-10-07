@@ -5,6 +5,7 @@ import './assets/css/base/base.css'
 import Home from './paginas/Home'
 import Sobre from './paginas/Sobre'
 import Pagina404 from './paginas/Pagina404'
+import Cabecalho from './components/Cabecalho'
 
 // Segundo passo: instalar a lib react-router-dom e importar aqui
 // Eu renomeei BrowserRouter para Router
@@ -20,9 +21,12 @@ function App() {
 // Setimo passo: Agora preciso indicar caso a pessoa tente acessar uma rota que nao existe, entao vou criar uma nova
 // página chamada "Pagina 404.jsx". IR PARA LA. Na <Pagina404> eu nao vou indicar caminho pq eu vou dizer que
 // qualquer caminho sem ser os que existem, vão direcionar pra la.
+// Oitavo passo foi criar o componente Cabecalho que la tinha o caminho das rotas para usar. Agora vou importar aqui.
+// Nono passo: Inserir o componente antes do Switch, assim eu garanto que ele vai englobar todas as rotas.
 
   return (
     <Router>
+      <Cabecalho />
       <Switch>
 
         <Route exact path='/'>
