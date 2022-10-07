@@ -23,6 +23,9 @@ function App() {
 // qualquer caminho sem ser os que existem, vão direcionar pra la.
 // Oitavo passo foi criar o componente Cabecalho que la tinha o caminho das rotas para usar. Agora vou importar aqui.
 // Nono passo: Inserir o componente antes do Switch, assim eu garanto que ele vai englobar todas as rotas.
+// Decimo passo: Esta acontencendo um problema que o react ta chamando o index.html toda vez que eu mudo a rota,
+// e para isso eu vou voltar no componente Cabecalho e vou trocar o <a> por <link>, e aí sim ele nao vai chamar 
+// pelo index.html toda vez. Ou seja, o <Link> faz o papel do ancora <a> só que sem recarregar a pagina toda hora.
 
   return (
     <Router>
