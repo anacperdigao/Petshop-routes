@@ -6,6 +6,7 @@ import Home from './paginas/Home'
 import Sobre from './paginas/Sobre'
 import Pagina404 from './paginas/Pagina404'
 import Post from './paginas/Post'
+import Categoria from './paginas/Categoria'
 import Cabecalho from './components/Cabecalho'
 
 // Segundo passo: instalar a lib react-router-dom e importar aqui
@@ -40,6 +41,8 @@ function App() {
 // Para isso eu vou usar o hook useParams na propria pagina <Post e depois vou colocar no path aqui na pagina.
 // Passo 18: Agora vou criar as categorias dos post, e para isso começo criando um novo componente ListaCategorias.
 // Passo 19: Vou chamar o ListaCategorias na pagina Home
+// Passo 20: Vou criar a pagina Categoria
+// Passo 21: Agora vou criar subcategorias e vou começar criando uma pagina de SubCategorias.
 
   return (
     <Router>
@@ -52,6 +55,10 @@ function App() {
         
         <Route path='/sobre'>
           <Sobre />
+        </Route>
+
+        <Route path='/categoria/:id'>
+          <Categoria />
         </Route>
 
         <Route path='/posts/:id'>
