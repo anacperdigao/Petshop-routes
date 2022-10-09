@@ -20,6 +20,7 @@ const Post = () => {
         .catch(() => { //Aqui eu vou tratar caso o id seja invalido, se a pessoa tentar acessar uma rota /posts/qualquercoisa
             history.push('/404') //Com o push, colocamos na frente do “/post/88” alguma coisa, essa alguma coisa vai ser a rota /404
         }) 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]) //vou renderizar toda vez que eu alterar o ID
 
 
