@@ -5,11 +5,13 @@ import './assets/css/base/base.css'
 import Home from './paginas/Home'
 import Sobre from './paginas/Sobre'
 import Pagina404 from './paginas/Pagina404'
+import Post from './paginas/Post'
 import Cabecalho from './components/Cabecalho'
 
 // Segundo passo: instalar a lib react-router-dom e importar aqui
 // Eu renomeei BrowserRouter para Router
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
 
 
 function App() {
@@ -30,8 +32,14 @@ function App() {
 // o seguinte comando "npx json-server --watch db.json --port 5000". Isso é para alimentar os posts do blog.
 // Passo 12: Criar um arquivo chamado api.js 
 // Passo 13: Verificar se ja tem a biblioteca axios instalada pq é ela que faz a conexao com a API.
-// Passo 14: Criar um componente de ListaPost para pegar os dados da API.
-
+// Passo 14: Criar um componente de ListaPost para pegar os dados da API. É necessario usar o hook useEffect.
+// Passo 15: No componente ListaPost eu utilizei o <LINK e eu mandei o to={} já com a id certa, só que parando pra pensar,
+// eu ainda nao criei essa pagina do post, e é isso que eu vou fazer agora criando uma nova página chamada Post.
+// Passo 16: Vou criar mais rota para a pagina <Post
+// Passo 17: Aqui aconteceu um problema: como dizer o caminho path do <Post dando match com o id certo?
+// Para isso eu vou usar o hook useParams na propria pagina <Post e depois vou colocar no path aqui na pagina.
+// Passo 18: Agora vou criar as categorias dos post, e para isso começo criando um novo componente ListaCategorias.
+// Passo 19: Vou chamar o ListaCategorias na pagina Home
 
   return (
     <Router>
@@ -44,6 +52,10 @@ function App() {
         
         <Route path='/sobre'>
           <Sobre />
+        </Route>
+
+        <Route path='/posts/:id'>
+          <Post />
         </Route>
         
         <Route>
